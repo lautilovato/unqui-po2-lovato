@@ -11,7 +11,7 @@ public class Counter {
 	
 	private List<Integer> numbersList = new ArrayList<Integer>();
 	
-	public void AddNumber(int number) {
+	public void addNumber(int number) {
 		numbersList.add(number);
 	}
 	
@@ -30,7 +30,7 @@ public class Counter {
 		return newNumbers;
 	}
 	
-	public List<Integer> oddNumbers(){
+	public int oddNumbers(){
 		List<Integer> numbers = this.getNumbersList();
 		List<Integer> newNumbers = new ArrayList<Integer>();
 		for(int number:numbers) {
@@ -38,10 +38,10 @@ public class Counter {
 				newNumbers.add(number);
 			}
 		}
-		return newNumbers;
+		return newNumbers.size();
 	}
 
-	public List<Integer> multiplesOfX(int x) {
+	public int multiplesOfX(int x) {
 		List<Integer> numbers = this.getNumbersList();
 		List<Integer> newNumbers = new ArrayList<Integer>();
 		for(int number:numbers) {
@@ -49,7 +49,7 @@ public class Counter {
 				newNumbers.add(number);
 			}
 		}
-		return newNumbers;
+		return newNumbers.size();
 	}
 	
 }
