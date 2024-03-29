@@ -28,5 +28,22 @@ public class Multioperador {
 		return result;
 	}
 
+	public int  applySubtract(){
+		int result = 0;
+		List<Integer> numbers = this.getNumbersList();
+		for(int number:numbers) {
+			result = result - number;
+		}
+		return result;
+	}
+	
+	public int applyMultiplication() {
+		int result = 1;
+		List<Integer> numbers = this.getNumbersList();
+		for(int number:numbers) {
+			result = result * number;
+		}
+		return result;
+	}
 
 }
