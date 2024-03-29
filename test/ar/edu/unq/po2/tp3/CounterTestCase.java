@@ -31,5 +31,13 @@ class CounterTestCase {
 		assertEquals(amount, 9);
 		
 	}
+	
+	@Test
+	public void testHigherNumberXY() {
+		int number = counter.higherNumberXY(3,9);
+		
+		assertEquals(number, 999);
+		
+	}
 
 }

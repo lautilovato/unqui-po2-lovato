@@ -1,15 +1,15 @@
 package ar.edu.unq.po2.tp3;
-
 import java.util.List;
 import java.util.ArrayList;
 
 public class Counter {
 	
-	public Counter(){
+	private List<Integer> numbersList = new ArrayList<Integer>();
 	
+	public Counter(){
+		
 	}
 	
-	private List<Integer> numbersList = new ArrayList<Integer>();
 	
 	public void addNumber(int number) {
 		numbersList.add(number);
@@ -52,4 +52,22 @@ public class Counter {
 		return newNumbers.size();
 	}
 	
+	/* funcion ej 3 */
+	
+	public int higherNumberXY(int x,int y) {
+		int number = -1;
+		for(int i = 0; i<1001; i++) {
+			if(i % x == 0 && i % y == 0){
+				number = i;
+			}
+		}
+		return number;
+	}
+	
+	
 }
+
+
+
+
+
