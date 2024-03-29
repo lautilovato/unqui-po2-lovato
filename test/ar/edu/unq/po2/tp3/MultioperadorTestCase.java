@@ -26,5 +26,16 @@ class MultioperadorTestCase {
 		int result = multioperador.applySum();
 		assertEquals(result, 25);
 	}
+	
+	@Test
+	void testSubtractNumbers() {
+		int result = multioperador.applySubtract();
+		assertEquals(result, -25);
+	}
 
+	@Test
+	void testMultiplicationNumbers() {
+		int result = multioperador.applyMultiplication();
+		assertEquals(result, 945);
+	}
 }
