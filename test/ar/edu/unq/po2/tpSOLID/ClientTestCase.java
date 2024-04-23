@@ -18,9 +18,18 @@ class ClientTestCase {
 	}
 	
 	@Test
-	void test() {
+	void testAnnuaSalary() {
 
-		assertEquals(client.getAnnualNetSalary(), 36285,24);
+		assertEquals(client.getAnnualNetSalary(), 36285.24);
+		assertEquals(client.getMoneyBag(), 367.25);
 	}
+	
+	@Test
+	void testSetMoneyBag() {
+		client.setMoneyBag(100);
+		assertEquals(client.getMoneyBag(), 100);
+		
+	}
+
 
 }

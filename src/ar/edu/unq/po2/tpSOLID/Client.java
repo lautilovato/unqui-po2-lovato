@@ -44,7 +44,7 @@ public class Client {
 	}
 	
 	public void applyForCredit(Bank bank, Credit credit) {
-		
+		bank.registerCreditApplication(credit);
 	}
 
 }
