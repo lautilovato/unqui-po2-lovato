@@ -39,5 +39,15 @@ class StreamsTestCase {
 		assertTrue(municipality.getSoccerActivities().contains(soccer2));
 		
 	}
+	
+	@Test
+	void testComplexityActivities() {
+		
+		List<WeeklyActivity> activitiesComplexity = municipality.getActivitiesWithComplexity(1);
+		
+		assertEquals(activitiesComplexity.size(), 1);
+		assertTrue(activitiesComplexity.contains(running1));
+		
+	}
 
 }
