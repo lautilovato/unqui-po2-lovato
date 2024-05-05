@@ -26,9 +26,17 @@ class StreamsTestCase {
 		soccer2 = new WeeklyActivity(Day.MONDAY, "19:30", 2, Sport.SOCCER);
 		running1 = new WeeklyActivity(Day.SATURDAY, "19:30", 2, Sport.RUNNING);
 		
-		activities = Arrays.asList(soccer1, soccer2, running1);
+		activities = Arrays.asList(running1, soccer1, soccer2);
 		
 		municipality = new Municipality(activities);
+	}
+	
+	@Test
+	void testSoccCost() {
+		
+		assertEquals(soccer1.getCost(), 1400);
+		assertEquals(soccer2.getCost(), 1400);
+		
 	}
 	
 	@Test
@@ -49,5 +57,22 @@ class StreamsTestCase {
 		assertTrue(activitiesComplexity.contains(running1));
 		
 	}
+	
+	@Test
+	void testTotalHoursInActivities() {
+		
+		int totalHours = municipality.getTotalHoursInActivities();
+		
+		assertEquals(totalHours, 5);
+	}
+	
+	@Test
+	void testLowCostActivityForSport() {
+		
+		WeeklyActivity lowCostSportActivity = municipality.getLowestCostActivityForSport(Sport.SOCCER);
+		
+		assertEquals(lowCostSportActivity, soccer1);
+	}
+
 
 }

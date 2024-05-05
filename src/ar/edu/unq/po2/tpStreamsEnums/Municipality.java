@@ -35,5 +35,29 @@ public class Municipality {
 		return weeklyActivities.filter(a -> a.getSport().getComplexity() == complexity).toList();
 	}
 	
+	public int getTotalHoursInActivities(){
+		
+		List<Integer> durations = new ArrayList<Integer>();
+		
+		Stream<WeeklyActivity> weeklyActivities = this.getWeeklyActivities().stream();
+		
+		weeklyActivities.forEach(wa -> durations.add(wa.getDuration() ) );
+		
+		int totalHours = durations.stream().reduce(0, (acumulated , newDuration ) -> acumulated + newDuration);
+		
+		return totalHours;
+	}
+	
+	public WeeklyActivity getLowestCostActivityForSport(Sport sport){
+		
+		List <WeeklyActivity> activities = this.getWeeklyActivities();
+		WeeklyActivity lowestCostActivity = activities.getFirst();
+		for(WeeklyActivity wa: activities) {
+			if(wa.getCost() < lowestCostActivity.getCost() && wa.getSport() == sport) {
+				lowestCostActivity = wa;
+			}
+		}
+		return lowestCostActivity;
+	}
 	
 }	
