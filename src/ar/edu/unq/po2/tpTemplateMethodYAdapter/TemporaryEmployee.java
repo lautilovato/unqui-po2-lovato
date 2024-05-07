@@ -2,6 +2,7 @@ package ar.edu.unq.po2.tpTemplateMethodYAdapter;
 
 public class TemporaryEmployee extends Employee{
 	
+	private int hoursWorked;
 	private boolean family;
 	private final double basicSalary = 1000;
 	private final double amountPerHour = 5;
@@ -9,7 +10,7 @@ public class TemporaryEmployee extends Employee{
 
 	public TemporaryEmployee(int hoursWorked, boolean family) {
 		
-		super(hoursWorked);
+		this.hoursWorked = hoursWorked;
 		this.family = family;
 	}
 
@@ -29,6 +30,9 @@ public class TemporaryEmployee extends Employee{
 		return amount;
 	}
 	
+	public int getHoursWorked() {
+		return hoursWorked;
+	}
 	
 	public double getAmountPerHour() {
 		return amountPerHour;

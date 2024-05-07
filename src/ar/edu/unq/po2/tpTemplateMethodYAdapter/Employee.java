@@ -2,10 +2,9 @@ package ar.edu.unq.po2.tpTemplateMethodYAdapter;
 
 abstract class Employee {
 	
-	private int hoursWorked;
 
-	public Employee(int hoursWorked) {
-		this.hoursWorked = hoursWorked;
+
+	public Employee() { 
 	}
 	
 	protected double  salary() {
@@ -23,9 +22,6 @@ abstract class Employee {
 		return (grossSalary * 0.13);
 	}
 	
-	public int getHoursWorked() {
-		return hoursWorked;
-	}
 }
 
 
