@@ -57,6 +57,10 @@ public class PokerStatus {
 		return card1.getCardValue() > card2.getCardValue();
 	}
 	
+	public boolean itsSameSuit(Card card1, Card card2) {
+		return card1.getSuit() == card2.getSuit();
+	}
+	
 }
 
 

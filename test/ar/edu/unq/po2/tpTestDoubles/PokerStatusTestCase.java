@@ -118,5 +118,16 @@ class PokerStatusTestCase {
 		assertTrue(result);
 	}
 	
+	@Test
+	void testSameSuit() {
+		
+		Card cardX= new Card("D", "K");
+		Card cardY= new Card("D", "A");
+		
+		boolean result = ps.itsSameSuit(cardY, cardX);
+		
+		assertTrue(result);
+	}
+	
 
 }
