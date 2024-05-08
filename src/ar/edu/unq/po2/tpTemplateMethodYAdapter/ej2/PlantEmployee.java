@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tpTemplateMethodYAdapter;
+package ar.edu.unq.po2.tpTemplateMethodYAdapter.ej2;
 
 public class PlantEmployee extends Employee{
 	
