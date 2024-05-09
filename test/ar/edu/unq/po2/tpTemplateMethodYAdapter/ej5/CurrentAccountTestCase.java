@@ -34,6 +34,7 @@ class CurrentAccountTestCase {
 		
 		assertEquals(currentAccount.getBalance(), -200);
 		assertTrue(currentAccount.getMovements().contains("Extraction"));
+		
 	}
 	
 	@Test
