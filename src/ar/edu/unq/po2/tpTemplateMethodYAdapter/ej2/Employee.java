@@ -1,11 +1,7 @@
 package ar.edu.unq.po2.tpTemplateMethodYAdapter.ej2;
 
 abstract class Employee {
-	
 
-
-	public Employee() { 
-	}
 	
 	protected double  salary() {
 		
