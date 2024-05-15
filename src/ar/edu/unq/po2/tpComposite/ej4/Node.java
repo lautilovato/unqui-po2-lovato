@@ -3,6 +3,7 @@ package ar.edu.unq.po2.tpComposite.ej4;
 abstract class Node {
 	
 	String name;
+	int size;
 	
 	public Node(String name) {
 		this.name = name;
@@ -12,5 +13,6 @@ abstract class Node {
 		return name;
 	}
 
+	public abstract int getSize();
 	
 }
