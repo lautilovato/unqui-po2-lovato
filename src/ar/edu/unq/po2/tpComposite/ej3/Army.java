@@ -19,6 +19,14 @@ public class Army extends Character{
 	public List<Character> getMembers() {
 		return members;
 	}
+	
+	public void addMember(Character member) {
+		members.add(member);
+	}
+	
+	public void removerMember(Character member) {
+		members.remove(member);
+	}
 
 	public void walkTo(int ubiactionX, int ubiactionY) {
 		for(Character member: this.getMembers()) {
