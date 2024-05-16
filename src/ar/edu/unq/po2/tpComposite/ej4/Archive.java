@@ -14,4 +14,15 @@ public class Archive extends Node{
 	public int getSize() {
 		return size;
 	}
+	
+	public void setName(String name) {
+		this.name = name;
+		this.lastModificaiton = LocalDateTime.now();
+		
+	}
+
+	public LocalDateTime getLastModificaiton() {
+		return lastModificaiton;
+	}
+	
 }
