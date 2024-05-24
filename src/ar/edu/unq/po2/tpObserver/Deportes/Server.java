@@ -28,6 +28,10 @@ public class Server extends Observable{
 	public Match getLastMatchRegister() {
 		return lastMatchRegister;
 	}
+	
+	public void setLastMatchRegister(Match lastMatchRegister) {
+		this.lastMatchRegister = lastMatchRegister;
+	}
 
 	public boolean isMatchOfInterest(Match match) {
 		
@@ -36,8 +40,10 @@ public class Server extends Observable{
 	
 	public void registerMatch(Match match) {
 		if(this.isMatchOfInterest(match)) {
+			this.setLastMatchRegister(match);
 			this.advice();
 		}
 	}
+
 	
 }

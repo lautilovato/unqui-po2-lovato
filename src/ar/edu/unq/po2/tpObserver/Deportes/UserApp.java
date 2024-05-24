@@ -15,6 +15,8 @@ public class UserApp implements Observer{
 		
 		this.server = server;
 		this.sportsOfInterest = sportsOfInterest;
+		
+		server.addObserver(this);
 	}
 	
 	public Server getServer() {
