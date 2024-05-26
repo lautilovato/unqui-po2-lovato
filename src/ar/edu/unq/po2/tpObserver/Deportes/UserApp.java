@@ -3,20 +3,22 @@ package ar.edu.unq.po2.tpObserver.Deportes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserApp implements Observer{
+public class UserApp{
 	
 	private Server server;
 	private List<String> sportsOfInterest = new ArrayList<String>();
 	private List<String> opponentsOfInterest = new ArrayList<String>();
+	
 	private List<Match> matchesOfInterest = new ArrayList<Match>(); 
 	
 	
-	public UserApp(Server server, List<String> sportsOfInterest) {
+	public UserApp(Server server, List<String> sportsOfInterest, List<String> opponentsOfInterest) {
 		
 		this.server = server;
 		this.sportsOfInterest = sportsOfInterest;
+		this.opponentsOfInterest = opponentsOfInterest;
 		
-		server.addObserver(this);
+		server.addFilter(new FilterMatch(this));
 	}
 	
 	public Server getServer() {
@@ -34,17 +36,10 @@ public class UserApp implements Observer{
 	public List<Match> getMatchesOfInterest() {
 		return matchesOfInterest;
 	}
-
-	public boolean isMatchOfInterest(Match match) {
-		
-		return this.getSportsOfInterest().contains(match.getSport()) || 
-				this.getOpponentsOfInterest().stream().anyMatch(opponent -> match.getOpponents().contains(opponent));		
-	}
 	
-	public void update() {
-		if( this.isMatchOfInterest( this.getServer().getLastMatchRegister()) ) {
-			matchesOfInterest.add(this.getServer().getLastMatchRegister());
-		}
+	public void addMatchInterest(Match match) {
+		this.matchesOfInterest.add(match);
 	}
+
 }
 

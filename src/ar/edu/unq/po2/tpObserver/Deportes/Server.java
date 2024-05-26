@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Server extends Observable{
+public class Server{
 	
 	private List<String> sportsOfInterest = new ArrayList<String>();
 	private Match lastMatchRegister;
+	private List<FilterMatch> filters = new ArrayList<FilterMatch>();
 	
 	public Server() {
 		
@@ -32,7 +33,25 @@ public class Server extends Observable{
 	public void setLastMatchRegister(Match lastMatchRegister) {
 		this.lastMatchRegister = lastMatchRegister;
 	}
+	
+	public List<FilterMatch> getFilters() {
+		return filters;
+	}
+	
+	public void addFilter(FilterMatch filterMatch) {
+		filters.add(filterMatch);
+	}
+	
+	public void deleteObserver(FilterMatch filterMatch) {
+		filters.remove(filterMatch);
+	}
 
+	
+	public void advice() {
+		for (FilterMatch f:this.getFilters()) {
+			f.update();
+		}
+	}
 	public boolean isMatchOfInterest(Match match) {
 		
 		return this.getSportsOfInterest().contains(match.getSport());
